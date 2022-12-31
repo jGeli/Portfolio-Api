@@ -24,11 +24,20 @@ app.use(cors({
     origin: "*"
 }))
 
+
+app.get("/", function (req, res) {
+
+
+    res.sendFile(process.cwd() + "/index.html");
+});
+
 app.use("/v1", router)
 
 app.get('/v1', (req, res) => {
-    res.send('Portfolio Website API!')
+    res.send('Portfolio Website API! V1')
 })
+
+
 
 
 
